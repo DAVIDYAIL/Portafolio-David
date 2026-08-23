@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <%@ include file="config.jsp" %>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,7 +34,7 @@
                     <a class="nav-link" href="proyectos.jsp">Proyectos</a>
                     <a class="nav-link" href="habilidades.jsp">Habilidades</a>
                     <a class="nav-link" href="experiencia.html">Experiencia</a>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
+                    <a class="nav-link" href="contacto.jsp">Contacto</a>
                 </div>
             </div>
 
@@ -45,7 +46,6 @@
         <h1>Habilidades</h1>
 
         <%
-
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -64,15 +64,15 @@
 
         <ul class="mt-4">
 
-        <%
+            <%
                 while (resultados.next()) {
-        %>
+            %>
 
-            <li><%= resultados.getString("nombre") %></li>
+                <li><%= resultados.getString("nombre") %></li>
 
-        <%
+            <%
                 }
-        %>
+            %>
 
         </ul>
 
